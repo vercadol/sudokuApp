@@ -1,0 +1,16 @@
+@(nick: String = "")
+
+<nav class="navbar navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="@controllers.routes.HomeController.index">
+            @*                <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-top">*@
+            <h4 class="display-4">Sudoku</h4>
+        </a>
+    </div>
+    <span class="navbar-text pl-3">
+        Create and solve!
+    </span>
+    <span class="navbar-text pr-3">
+        @nick
+    </span>
+</nav>

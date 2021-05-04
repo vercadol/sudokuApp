@@ -1,0 +1,17 @@
+@(myForm: Form[Nickname])(implicit assetsFinder: AssetsFinder, messagesProvider: MessagesProvider, request: Request[_])
+
+    @main("Sudoku"){
+        @header()
+
+        <div class="bg-light">
+            <div class="p-5 mx-auto" style="width: 80%;">
+                @welcome("Sudoku")
+                <br>
+
+                @b4.horizontal.formCSRF(routes.HomeController.createNickname, "col-md-2", "col-md-10") { implicit hfc =>
+                    @b4.text(myForm("Nickname"), '_label -> "Your nickname:" )
+                    @b4.submit('class -> "btn btn-primary"){ <i class="fa fa-ok"></i> Continue }
+                }
+            </div>
+        </div>
+    }

@@ -1,0 +1,10 @@
+@(nick: String, content: String)(implicit assetsFinder: AssetsFinder, messagesProvider: MessagesProvider, request: Request[_])
+
+@main("Sudoku") {
+    @header(nick)
+    <div class="p-2 bg-light text-center" style="height: 100vh">
+        <h4 class="display-4">@content</h4>
+
+        <button class="btn btn-primary btn-lg btn-md" onclick="location.href='@controllers.routes.HomeController.loggedScreen(nick)';">Continue to Home Screen</button>
+    </div>
+}

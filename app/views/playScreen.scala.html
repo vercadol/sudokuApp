@@ -1,0 +1,8 @@
+@import controllers.GameMode.PlayGameMode
+@(nick: String, sudoku: List[List[Int]], sudokuForm: Form[List[List[Int]]], mistakes: List[(Int, Int)] = List.empty[(Int, Int)])(implicit assetsFinder: AssetsFinder, messagesProvider: MessagesProvider, request: Request[_])
+
+<div class="bg-light mx-auto" style="height: 100vh">
+    @grid(nick, sudoku, sudokuForm, PlayGameMode, mistakes){
+        <button class="btn btn-primary btn-lg btn-md mt-3" onclick="location.href='@controllers.routes.HomeController.loggedScreen(nick)';">Back to Home Screen</button>
+    }
+</div>

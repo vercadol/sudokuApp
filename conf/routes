@@ -1,0 +1,25 @@
+
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+
+POST    /                           controllers.HomeController.createNickname
+
+GET     /u/                         controllers.HomeController.loggedScreen(nick: String)
+
+GET     /u/play                     controllers.HomeController.playSudoku(nick: String)
+
+POST    /u/insert                   controllers.HomeController.insert(nick: String, action: controllers.GameMode)
+
+GET     /u/create                   controllers.HomeController.create(nick: String)
+
+GET     /u/create/save              controllers.HomeController.saveSudoku(nick: String)
+
+GET     /u/success                  controllers.HomeController.successScreen(nick: String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
